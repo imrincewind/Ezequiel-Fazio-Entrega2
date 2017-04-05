@@ -7,14 +7,14 @@ import java.util.Date;
 public class Main {
 	/*
 	 * Para poder observar una diferencia entre ambos metodos de ordenamiento
-	 * fue necesario utilizar arreglos de gran tamaño. Con estos arreglos y al
+	 * fue necesario utilizar arreglos de gran tamaÃ±o. Con estos arreglos y al
 	 * observar los resultados de tiempo, se hace notoria la diferencia entre
-	 * ambos metodos, siendo mucho más eficiente el MERGESORT
+	 * ambos metodos, siendo mucho mÃ¡s eficiente el MERGESORT
 	 *
 	 */
 
 	public static void main(String[] args) {
-		final int SIZE = 30000000;
+		final int SIZE = 300000;
 		int[] arregloB = new int[SIZE];
 		int[] arregloM = new int[SIZE];
 		BubbleSort bubb = new BubbleSort();
@@ -51,13 +51,14 @@ public class Main {
 		long resultadoMerge = finalMerge.getTime() - inicioMerge.getTime();
 		System.out.println(resultadoMerge / 1000 + " segundos MERGESORTE");
 
-		// SE IMPRIMEN LOS ÚLTIMOS 10000 PARA OBSERBAR QUE HAYA FUNCIONADO EL
+		// SE IMPRIME PARA OBSERBAR QUE HAYA FUNCIONADO EL
 		// ORDENAMIENTO EN AMBOS CASOS
-		for (int i = SIZE - 1; i > SIZE - 10000; i--) {
+		// USAR i= SIZE GENERABA ERROR
+		for (int i = 300000 - 1; i > SIZE; i--) {
 			System.out.print(arregloB[i] + " - ");
 		}
 		System.out.println("");
-		for (int i = SIZE - 1; i > SIZE - 10000; i--) {
+		for (int i = 300000 - 1; i > SIZE; i--) {
 			System.out.print(arregloM[i] + " - ");
 		}
 
